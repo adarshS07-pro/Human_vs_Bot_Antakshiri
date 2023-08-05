@@ -2,13 +2,6 @@
 import random
 import abc
 
-#An abstract class is a class that represents (heads) a category of classes.
-#Example: Shape, Vehicle, Animal, Player
-#It cannot be instantiated.
-#It is inherited and used.
-#It has zero to many abstract methods.
-#In Python, an abstract class inherits abc.ABC
-
 class Player(abc.ABC):
     def __init__(self, lyrics):
         self._lyrics_ = lyrics
@@ -23,16 +16,7 @@ class Player(abc.ABC):
 
     def has_more_songs(self):
         return  len(self._lyrics_) != 0
-
-    #An abstract method represents an operation that cannot be defined at current level;
-    #rather it can be defined at the derived class level only.
-    #Example: area() of Shape, move() of Animal, conduct() of Exam, ...
-
-    #An abstract method is a method with signature only and no body.
-    #It's dispatch table entry is None.
-    #It makes the class an abstract class.
-    #It must be overridden by the derived class.
-    #In Python, an abstract method is decorated as abc.abstractmethod
+        
     @abc.abstractmethod
     def play(self, start_char):
         pass
